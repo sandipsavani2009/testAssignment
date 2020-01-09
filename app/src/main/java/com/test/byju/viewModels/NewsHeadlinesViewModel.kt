@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.test.byju.io.Constants
 import com.test.byju.io.NetworkIoManager
+import com.test.byju.io.dto.Article
 import com.test.byju.io.dto.NewsResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -35,6 +36,17 @@ class NewsHeadlinesViewModel : ViewModel() {
         } else {
             networksState.value = Constants.NTWORK_STATE_NO_INTERNET
         }
+    }
+
+    fun getArticleAt(index: Int): Article? {
+        newsHeadLines.let {
+            it.value?.articles?.let { articleList ->
+                if (index < articleList.size) {
+                    return articleList[index]
+                }
+            }
+        }
+        return null
     }
 
     override fun onCleared() {

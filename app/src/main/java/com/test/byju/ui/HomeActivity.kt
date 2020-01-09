@@ -1,8 +1,7 @@
 package com.test.byju.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
@@ -12,8 +11,9 @@ import com.test.byju.io.Constants
 import com.test.byju.io.dto.NewsResponse
 import com.test.byju.viewModels.NewsHeadlinesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+import org.parceler.Parcels
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var mViewModel: NewsHeadlinesViewModel
 
@@ -35,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         newsResponse?.let {
             news_recyclerView.adapter = NewsHeadlinesAdapter(this, newsResponse.articles) {
 
-                Log.d("TAG", "news clicked")
+                val intent = Intent(this@HomeActivity, ArticleDetailsActivity::class.java)
+                intent.putExtra(Constants.SELECTED_ARTICLE, Parcels.wrap(it))
+                startActivity(intent)
             }
         }
     }

@@ -1,6 +1,7 @@
 package com.test.byju.io.dto
 
 import com.google.gson.annotations.SerializedName
+import org.parceler.Parcel
 
 data class NewsResponse (
 
@@ -14,6 +15,7 @@ data class NewsResponse (
     val articles: List<Article>? = null
 )
 
+@Parcel
 data class Article(
 
     @SerializedName("source")
@@ -41,6 +43,7 @@ data class Article(
     val content: String = ""
 )
 
+@Parcel
 data class Source (
 
     @SerializedName("id")

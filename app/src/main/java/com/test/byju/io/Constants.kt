@@ -11,6 +11,8 @@ class Constants {
         val NTWORK_STATE_LOADING: Int = 12
         val NTWORK_STATE_ERROR: Int = 13
         val NTWORK_STATE_SUCCESS: Int = 14
+
+        val SELECTED_ARTICLE = "selectedArticle"
     }
 
 }

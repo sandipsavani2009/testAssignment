@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.ArticleDetailsActivity"
+        android:background="@color/black_464646">
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/details_imgView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:paddingLeft="@dimen/dp_24"
+                      android:paddingRight="@dimen/dp_24"
+                      android:paddingBottom="@dimen/dp_12"
+                      android:background="@drawable/new_card_bg"
+                      android:layout_gravity="bottom">
+
+            <TextView
+                    android:id="@+id/details_title_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/sp_29"
+                    android:textColor="#f2f2f2"
+                    android:fontFamily="@font/roboto_slab_bold"
+            />
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_64">
+
+                <TextView
+                        android:id="@+id/detail_channel_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="30"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/sp_20"
+                        android:textColor="#f2f2f2"
+                        android:fontFamily="@font/roboto_slab_regular"
+                        android:layout_alignParentLeft="true"/>
+
+
+                <TextView
+                        android:id="@+id/details_date_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="30"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/sp_20"
+                        android:textColor="#f2f2f2"
+                        android:fontFamily="@font/roboto_slab_regular"
+                        android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                    android:id="@+id/detail_desc_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="5"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/white_bababa"
+                    android:fontFamily="@font/roboto_slab_regular"
+                    android:layout_marginTop="@dimen/dp_16"/>
+
+        </LinearLayout>
+
+        <ImageView
+                android:id="@+id/details_back_button"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:src="@drawable/back_arrow"
+                android:padding="@dimen/dp_5"
+                android:rotationX="270"
+                android:background="@color/black"
+        />
+
+    </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
